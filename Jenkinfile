@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'From-Git'
+                git branch: 'main', url: 'https://github.com/devopstrainer657/devops_java.git'
+            }
+        }
+        
+        stage('Version Check') {
+            steps {
+                echo 'Compiling'
+                sh 'mvn --version'
+                
+            }
+        }        
+        
+        stage('Compile') {
+            steps {
+                echo 'Compiling'
+                sh 'mvn clean compile'
+                
+            }
+        }         
+    
+        stage('test') {
+            steps {
+                echo 'testing'
+                sh 'mvn test'
+                
+            }
+        }    
+
+        stage('package') {
+            steps {
+                echo 'packaging'
+                sh 'mvn package'
+                
+            }
+        } 
+       
+        
+    }
+}
