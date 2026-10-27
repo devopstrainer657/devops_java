@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'From-Git'
+                echo 'From-Git-repo'
                 git branch: 'main', url: 'https://github.com/devopstrainer657/devops_java.git'
             }
         }
