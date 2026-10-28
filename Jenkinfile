@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'From-Git-repo'
+                echo 'Main-repo'
                 git branch: 'main', url: 'https://github.com/devopstrainer657/devops_java.git'
             }
         }
         
         stage('Version Check') {
             steps {
-                echo 'Compiling'
+                echo 'Main-version'
                 sh 'mvn --version'
                 
             }
@@ -19,7 +19,7 @@ pipeline {
         
         stage('Compile') {
             steps {
-                echo 'Compiling'
+                echo 'Main-Compiling'
                 sh 'mvn clean compile'
                 
             }
