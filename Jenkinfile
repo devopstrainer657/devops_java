@@ -17,7 +17,7 @@ pipeline {
             }
         }        
         
-        stage('Compile') {
+        stage('Balraj - Compile') {
             steps {
                 echo 'Compiling'
                 sh 'mvn clean compile'
